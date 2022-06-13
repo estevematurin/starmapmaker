@@ -368,18 +368,20 @@
 
 			// the most ungodly function for making a table row, i hate dom
 			function tableRow(ra, dec, mag, stars) {
+				// id number
+				var id = stars.length.toString();
+			
 				// make <tr> element
 				var tr = document.createElement("tr");
-				tr.setAttribute("id", "item" + stars.length.toString());
+				tr.setAttribute("id", "item" + id);
 	
 				// make first <td> with checkbox
 				var td1 = document.createElement("td");
 				var checkbox = document.createElement("input");
 				checkbox.setAttribute("type", "checkbox");
-				checkbox.setAttribute("value", stars.length.toString());
+				checkbox.setAttribute("value", id);
 	
 				checkbox.addEventListener("change", function() {
-					id = stars.length.toString();
 					if (this.checked) {
 						selectStar(id);
 					} 
@@ -409,7 +411,6 @@
 				button.setAttribute("value", "Delete");
 	
 				button.addEventListener("click", function() {
-					id = stars.length.toString();
 					deleteStar(id, stars);
 				});
 	
@@ -440,12 +441,12 @@
 
 			// delete star and corresponding row of table
 			function deleteStar(id, stars) {
+				console.log(id, stars);
 				var star = $(id);
 				var par = star.parentNode;
 				var tr = $("item"+id);
 				var trPar = tr.parentNode;
 				var i = parseInt(id,10) - 1;
-				console.log(i, stars);
 				delete stars[i];
 				par.removeChild(star);
 				trPar.removeChild(tr);
