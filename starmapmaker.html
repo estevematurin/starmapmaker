@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Star Map Maker</title>
+		<link rel="stylesheet" href="starmapmaker.css">
+		<script type="text/javascript" src="starmapmaker.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Draw a Star Map!</h1>
+		</div>
+		<div id="downloads">
+			<p><a href="#" id="image">Download image</a></p>
+			<p><a href="#" id="list">Download list of RA/Dec/Mag values</a></p>
+			<p id="instructions" hidden></p>
+			<p id="download" hidden></p>
+		</div>
+		<div id="maps">
+			<svg id="starmapN"></svg>
+			<svg id="starmapS"></svg>
+		</div>
+		<div id="table">
+			<table id="stars">
+				<tr>
+					<th>Select?</th>
+					<th>Right Ascension (hours)</th>
+					<th>Declension (degrees)</th>
+					<th>Magnitude</th>
+					<th>Delete?</th>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
